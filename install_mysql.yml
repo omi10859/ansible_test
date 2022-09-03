@@ -5,10 +5,17 @@
     mysql_root_password: omkar
   tasks:
   - name: Install MySQL
-    apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
-    with_items:
-    - python-mysqldb
-    - mysql-server
+    apt: 
+      name: ['python-mysqldb'] 
+      update_cache: yes 
+      cache_valid_time: 3600 
+      state: present
+  - name: Install MySQL
+    apt: 
+      name: ['mysql-server'] 
+      update_cache: yes 
+      cache_valid_time: 3600 
+      state: present
   - name: Start the MySQL service
     sudo: yes
     service: 
