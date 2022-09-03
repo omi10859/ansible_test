@@ -1,0 +1,9 @@
+- hosts: ansibleuser
+  become: true
+  gather_facts: true
+  tasks:
+
+  - name: Restart Apache
+    ansible.builtin.apt:
+      name: apache2
+      state: restarted
