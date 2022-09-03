@@ -1,9 +1,14 @@
+---
 - hosts: ansibleuser
-  become: true
-  gather_facts: true
   tasks:
+  - name: start nginx
+    service:
+      name: nginx
+      state: started
 
-  - name: Restart Apache
-    ansible.builtin.apt:
-      name: apache2
-      state: restarted
+  - name: restart nginx
+    service:
+      name: nginx
+      state: stopped
+    become: true
+    become_method: sudo
