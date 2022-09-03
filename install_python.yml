@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: ansibleuser
   become: true
   gather_facts: true
   tasks:
