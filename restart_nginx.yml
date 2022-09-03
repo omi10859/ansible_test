@@ -1,4 +1,4 @@
-- hosts: web
+- hosts: ansibleuser
   become: yes
   tasks:
   - name: restart nginx
