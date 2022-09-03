@@ -9,9 +9,6 @@
     with_items:
     - python-mysqldb
     - mysql-server
-  #- name: copy cnf
-  #  copy: src=.my.cnf dest=~/.my.cnf owner=ubuntu mode=0644
-  #  sudo: yes
   - name: Start the MySQL service
     sudo: yes
     service: 
