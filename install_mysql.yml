@@ -1,11 +1,11 @@
 ---
 - hosts: ansibleuser
+  become: true
   vars:
     mysql_root_password: omkar
   tasks:
   - name: Install MySQL
     apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
-    sudo: yes
     with_items:
     - python-mysqldb
     - mysql-server
