@@ -1,6 +1,9 @@
 ---
 - hosts: ansibleuser
   become: true
+  vars:
+    mysql_root_password: omkar
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
   - name: "Create user bob"
     mysql_user:
