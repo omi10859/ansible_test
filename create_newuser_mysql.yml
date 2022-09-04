@@ -1,6 +1,7 @@
 ---
 - hosts: ansibleuser
   become: true
+  tasks:
   - name: "Create user bob"
     mysql_user:
       name: "bob"
