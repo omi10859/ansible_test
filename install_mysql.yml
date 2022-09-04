@@ -3,6 +3,7 @@
   become: true
   vars:
     mysql_root_password: omkar
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
   - name: Install MySQL
     apt: 
