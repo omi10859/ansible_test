@@ -1,0 +1,12 @@
+---
+- hosts: ansibleuser
+  become: true
+  - name: "Create user bob"
+    mysql_user:
+      name: "bob"
+      password: "omkar"
+      host: localhost
+      state: present
+      update_password: on_create
+      priv: '*.*:ALL'
+      login_unix_socket: /var/run/mysqld/mysqld.sock
